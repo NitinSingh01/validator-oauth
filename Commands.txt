@@ -1,0 +1,9 @@
+sudo apt-get install git –y
+sudo git clone https://github.com/NitinSingh01/PracticeDemo.git
+cd PracticeDemo/
+sudo sh setup.sh
+sudo docker-compose up
+sudo docker exec -it practicedemo_mysql1_1 mysql -usa –ppassword
+show databases;
+use UID;
+create table UID (FirstName varchar(100), LastName varchar(100), UID varchar(100));
