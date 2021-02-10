@@ -1,6 +1,6 @@
 import mysql.connector
 from flask import jsonify
-from flask import Flask, request
+from flask import Flask, request, redirect
 from flask_cors import CORS
 from flask import Flask, render_template, make_response
 from flask_dance.contrib.github import make_github_blueprint, github
