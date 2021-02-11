@@ -1,10 +1,13 @@
 import mysql.connector
+import os
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = '1'
 from flask import jsonify
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, url_for
 from flask_cors import CORS
 from flask import Flask, render_template, make_response
 from flask_dance.contrib.github import make_github_blueprint, github
 app = Flask(__name__)
+app.config["SECRET_KEY"]="SECRET KEY"
 github_blueprint = make_github_blueprint(client_id='KEY GOES HERE',
                                          client_secret='KEY GOES HERE ')
 app.register_blueprint(github_blueprint, url_prefix='/github_login')
@@ -21,7 +24,7 @@ def homepage():
     if not github.authorized:
         return redirect(url_for('github.login'))
     else:
-        return render_template('index.html')
+        return "Successful authentication"
 
 
 
