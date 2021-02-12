@@ -26,7 +26,10 @@ def homepage():
     else:
         return "Successful authentication"
 
-
+@app.route('/callback', methods=["GET"])
+def callback():
+    return "Something went wrong"
+	
 
     
 @app.route('/users',methods=['GET'])
