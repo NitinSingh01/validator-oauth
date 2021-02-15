@@ -6,6 +6,7 @@ from flask import Flask, request, redirect, url_for
 from flask_cors import CORS
 from flask import Flask, render_template, make_response
 from flask_dance.contrib.github import make_github_blueprint, github
+import config
 app = Flask(__name__)
 app.config["SECRET_KEY"]="SECRET KEY"
 github_blueprint = make_github_blueprint(client_id='KEY GOES HERE',
